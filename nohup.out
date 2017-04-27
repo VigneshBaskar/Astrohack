@@ -1,0 +1,134 @@
+[I 15:57:46.606 NotebookApp] Serving notebooks from local directory: /home/ubuntu/Astrohack
+[I 15:57:46.606 NotebookApp] 0 active kernels 
+[I 15:57:46.606 NotebookApp] The Jupyter Notebook is running at: http://localhost:8888/?token=d5ecdfab0a6c62b381f5760ac63fddbf601e6be4f1a908fd
+[I 15:57:46.606 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[W 15:57:46.607 NotebookApp] No web browser found: could not locate runnable browser.
+[C 15:57:46.607 NotebookApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:8888/?token=d5ecdfab0a6c62b381f5760ac63fddbf601e6be4f1a908fd
+[I 15:58:08.148 NotebookApp] 302 GET /tree (127.0.0.1) 1.42ms
+[I 15:58:25.712 NotebookApp] 302 POST /login?next=%2Ftree (127.0.0.1) 1.13ms
+[I 16:06:44.079 NotebookApp] Creating new directory in 
+[I 16:07:07.183 NotebookApp] Creating new notebook in /Code
+[I 16:07:07.186 NotebookApp] Writing notebook-signing key to /home/ubuntu/.local/share/jupyter/notebook_secret
+[I 16:07:08.519 NotebookApp] Kernel started: e9c2f6ea-274e-4c23-af1e-e5c1458704ed
+[I 16:09:08.601 NotebookApp] Saving file at /Code/Orchestrator.ipynb
+[I 16:09:46.818 NotebookApp] Saving file at /Code/Orchestrator.ipynb
+[I 16:11:10.292 NotebookApp] Creating new directory in /Code
+[I 16:12:09.821 NotebookApp] Creating new notebook in /Code/Pre_processing
+[I 16:12:11.740 NotebookApp] Kernel started: 58bbc42d-1b0c-44a0-b47c-e1cab9bc30d5
+[I 16:13:07.103 NotebookApp] Creating new directory in /Code
+[I 16:13:27.503 NotebookApp] Creating new directory in /Code
+[I 16:14:11.811 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 16:15:48.487 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 16:18:48.229 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 16:19:09.917 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 16:20:30.641 NotebookApp] Saving file at /param_global.py
+[I 16:22:54.549 NotebookApp] Saving file at /param_global.py
+[I 16:24:29.074 NotebookApp] Saving file at /param_global.py
+[I 16:25:30.213 NotebookApp] Saving file at /param_global.py
+[I 16:25:43.902 NotebookApp] Saving file at /param_global.py
+[I 16:26:05.771 NotebookApp] Saving file at /param_global.py
+[I 16:26:29.290 NotebookApp] Saving file at /param_global.py
+[I 16:28:11.799 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 16:30:11.798 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 16:32:11.795 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 16:34:11.796 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 16:36:11.796 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 16:40:11.793 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 16:41:10.273 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 16:45:44.240 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 16:45:52.743 NotebookApp] Kernel shutdown: 58bbc42d-1b0c-44a0-b47c-e1cab9bc30d5
+[I 16:46:00.006 NotebookApp] Saving file at /param_global.py
+[I 16:46:04.568 NotebookApp] Kernel started: 3ad10e8c-11e6-48d9-b5f5-5ac2ca18feed
+[I 16:46:16.748 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 16:46:49.970 NotebookApp] Saving file at /param_global.py
+[I 16:46:52.971 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 16:47:51.326 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 16:47:58.040 NotebookApp] Kernel shutdown: 3ad10e8c-11e6-48d9-b5f5-5ac2ca18feed
+[I 16:48:04.991 NotebookApp] Kernel started: 10d3913f-0b85-4088-8c17-290300a6828a
+[I 16:49:38.901 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 16:50:05.035 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 16:52:05.032 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 16:54:05.019 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 16:56:05.029 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 16:58:05.028 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:00:05.018 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:02:05.024 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:04:05.042 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:04:48.305 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:05:07.026 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:06:05.040 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:06:54.548 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:08:05.026 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:10:05.020 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:12:05.029 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:14:05.024 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:15:57.678 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:16:05.030 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:20:05.032 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:22:05.024 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:24:05.033 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:26:05.031 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:28:05.025 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:30:05.023 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:32:05.022 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:34:05.027 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:36:05.026 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:38:05.027 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:40:05.026 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:42:05.061 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:44:05.026 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:46:05.026 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:48:05.019 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:50:05.051 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:51:04.024 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:56:05.027 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:57:03.495 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 17:58:05.039 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:00:05.026 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:02:05.021 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:04:46.222 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:06:05.100 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:08:05.095 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:09:17.558 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:12:05.092 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:14:05.073 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:14:07.767 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:14:29.186 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:16:05.108 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:18:05.066 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:20:05.068 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:21:39.923 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:22:08.851 NotebookApp] Saving file at /param_global.py
+[I 18:22:32.067 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:22:35.270 NotebookApp] Saving file at /param_global.py
+[I 18:23:17.451 NotebookApp] Kernel shutdown: 10d3913f-0b85-4088-8c17-290300a6828a
+[I 18:23:34.384 NotebookApp] Kernel started: e446aad1-1318-4972-8c13-778f0e9bd475
+[I 18:25:34.480 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:25:43.966 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:26:54.202 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:27:34.461 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:29:34.460 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:30:00.171 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:31:34.436 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:33:34.435 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:35:34.429 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:37:02.666 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:37:34.428 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:39:34.442 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:41:34.429 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:43:34.442 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:44:06.844 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:44:08.766 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:44:13.570 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:45:09.323 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:45:11.644 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:45:34.444 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:45:38.777 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:45:55.917 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:48:46.613 NotebookApp] Kernel shutdown: e446aad1-1318-4972-8c13-778f0e9bd475
+[I 18:49:11.239 NotebookApp] Kernel started: bae0887d-194f-401a-89d6-004b39b5f173
+[I 18:49:50.056 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
