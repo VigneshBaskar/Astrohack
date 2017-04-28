@@ -18,12 +18,3 @@ code_path=os.path.join(astrohack_path,"Code")
 neural_network_path=os.path.join(code_path,"Neural_Network")
 pre_processing_path=os.path.join(code_path,"Pre_processing")
 predictions_path=os.path.join(code_path,"Predicitons")
-
-
-
-
-
-
-
-
-
