@@ -132,3 +132,43 @@
 [I 18:48:46.613 NotebookApp] Kernel shutdown: e446aad1-1318-4972-8c13-778f0e9bd475
 [I 18:49:11.239 NotebookApp] Kernel started: bae0887d-194f-401a-89d6-004b39b5f173
 [I 18:49:50.056 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 18:51:26.582 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[C 18:56:40.329 NotebookApp] received signal 15, stopping
+[I 18:56:40.349 NotebookApp] Shutting down kernels
+[I 18:56:40.350 NotebookApp] Kernel shutdown: e9c2f6ea-274e-4c23-af1e-e5c1458704ed
+[I 18:56:40.350 NotebookApp] Kernel shutdown: bae0887d-194f-401a-89d6-004b39b5f173
+[I 09:52:08.801 NotebookApp] Serving notebooks from local directory: /home/ubuntu/Astrohack
+[I 09:52:08.802 NotebookApp] 0 active kernels 
+[I 09:52:08.802 NotebookApp] The Jupyter Notebook is running at: http://localhost:8888/?token=729f564ee740d3f218ccf5d6c8d70d43157837415b66ee54
+[I 09:52:08.802 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[W 09:52:08.802 NotebookApp] No web browser found: could not locate runnable browser.
+[C 09:52:08.802 NotebookApp] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:8888/?token=729f564ee740d3f218ccf5d6c8d70d43157837415b66ee54
+[I 09:52:11.737 NotebookApp] 302 GET /tree (127.0.0.1) 1.44ms
+[W 09:52:33.104 NotebookApp] 401 POST /login?next=%2Ftree (127.0.0.1) 1.49ms referer=http://localhost:1235/login?next=%2Ftree
+[I 09:54:31.542 NotebookApp] 302 POST /login?next=%2Ftree (127.0.0.1) 1.13ms
+[I 09:55:04.979 NotebookApp] Kernel started: ac5b9de4-6992-4a80-a17d-dd14c0b908f7
+[I 09:57:05.028 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 09:59:05.027 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 10:01:05.058 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 10:11:05.093 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 10:11:40.216 NotebookApp] New terminal with automatic name: 1
+[I 10:13:05.069 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 10:13:26.791 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 10:13:31.841 NotebookApp] Kernel shutdown: ac5b9de4-6992-4a80-a17d-dd14c0b908f7
+[I 10:13:35.976 NotebookApp] Kernel started: 500de4e6-7c0d-43e5-b2e1-d3e1cf2da4d4
+[I 10:15:36.075 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 10:17:36.090 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 10:19:36.070 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 10:21:36.064 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 10:23:36.068 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 10:25:36.065 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 10:27:36.053 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 10:31:36.149 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[I 10:32:35.833 NotebookApp] Saving file at /Code/Pre_processing/Read_Preprocess_data.ipynb
+[C 10:33:44.466 NotebookApp] received signal 15, stopping
+[I 10:33:44.467 NotebookApp] Shutting down kernels
+[I 10:33:44.969 NotebookApp] Kernel shutdown: 500de4e6-7c0d-43e5-b2e1-d3e1cf2da4d4
