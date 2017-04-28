@@ -5,6 +5,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import warnings
 warnings.filterwarnings('ignore')
+import cv2
+
 
 astrohack_path=os.path.dirname(os.path.realpath(__file__))
 
