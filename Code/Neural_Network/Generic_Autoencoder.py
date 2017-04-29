@@ -1,9 +1,9 @@
 
 # coding: utf-8
 
-# In[1]:
+# In[0]:
 
-get_ipython().magic('matplotlib inline')
+#get_ipython().magic('matplotlib inline')
 
 import os
 import sys
@@ -19,7 +19,7 @@ for i in range(3):
 
 from param_global import *
 sys.path.append(pre_processing_path)
-from Read_Preprocess_data import data,plot_images
+from Read_Preprocess_data import data # ,plot_images
 import random
 
 
@@ -73,7 +73,6 @@ x = Conv2D(16, (3, 3), activation='relu', padding='same')(x)
 x = UpSampling2D((2, 2))(x)
 decoded = Conv2D(1, (3, 3), activation='sigmoid', padding='same')(x)
 
-autoencoder = Model(input_img, decoded)
 autoencoder.compile(optimizer='adadelta', loss='binary_crossentropy')
 
 
@@ -83,11 +82,8 @@ X = X.astype('float32')
 y = y.astype('float32') 
 
 
-# In[55]:
-
 X_train=X[0:int(len(X)*2/3)]
 X_test=X[int(len(X)*2/3):]
-
 
 # In[56]:
 
@@ -103,27 +99,7 @@ autoencoder.fit(X_train, X_train,
 decoded_imgs = autoencoder.predict(X_train)
 
 
-# In[58]:
+### Save results
 
-X_train.max()
-
-
-# In[68]:
-
-plot_images([X_train[10].reshape(decoded_imgs[1].shape[0],decoded_imgs[1].shape[1])])
-
-
-# In[69]:
-
-plot_images([decoded_imgs[10].reshape(decoded_imgs[1].shape[0],decoded_imgs[1].shape[1])])
-
-
-# In[20]:
-
-sample_data_object[20].plot_image()
-
-
-# In[ ]:
-
-
-
+with open(os.path.join(output_path,"autoencoder_on_sample"), 'wb') as handle:
+  pickle.dump(decoded_imgs, handle, protocol=pickle.HIGHEST_PROTOCOL)
