@@ -3,7 +3,7 @@ id_vcs.pub
 
 Data/
 
-##### Standard python stuff
+##### Standard python files and folders to ignore
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

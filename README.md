@@ -36,7 +36,7 @@ Finally,
 ```shell
 cd $VSC_DATA
 source activate tensorflow_non_gpu
-jupyter notebook
+jupyter notebook --port=8888
 ```
 and copy-paste the link in the first lines of the output to go to your notebook server.
 
