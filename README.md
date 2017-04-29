@@ -40,14 +40,7 @@ Assuming the name is `r1i0n1` we can set up the second tunnel with
 module load tmux
 tmux
 ssh r1i0n1 -L 7333:localhost:7333
-<CTRL+SPACE> d
-```
-### On the compute node (reached through `ssh r1i0n1`)
-
-Finally,
-```shell
-module load tmux
-tmux
+# Now you're on the compute node!
 cd $VSC_DATA
 source activate keras
 jupyter notebook --port=7333
