@@ -28,7 +28,7 @@ def extractBatch(i):
   print("Extracting batch " + str(i) + ". Number of images: " +  str(n))
   input_data_object=get_Data(batch,full_data_path)
 #with open(os.path.join(input_data_path,'input_data_object.p'), 'wb') as handle:
-	with open(os.path.join(output_path,'full_data_object_' + str(i) + '.p'), 'wb') as handle:
+	with open(os.path.join(temp_path,'full_data_object_' + str(i) + '.p'), 'wb') as handle:
 	    pickle.dump(input_data_object, handle, protocol=pickle.HIGHEST_PROTOCOL)
 	
 # Open the urls in their own threads
