@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import warnings
 warnings.filterwarnings('ignore')
 import cv2
+import pickle
 
 
 astrohack_path=os.path.dirname(os.path.realpath(__file__))
