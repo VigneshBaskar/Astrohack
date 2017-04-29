@@ -33,8 +33,8 @@ def image_resize(image, dim=(128,128), crop=(128,128)):
        dim: dimension to which it has to be resized
        crop: dimension of the image after center-cropping'''
     image_resized=cv2.resize(image, dim, interpolation = cv2.INTER_CUBIC)
-    return image_resized[int(dim[0] - crop[0] / 2) : int(dim[0] + crop[0] / 2),
-                         int(dim[1] - crop[1] / 2) : int(dim[1] + crop[1] / 2)]
+    return image_resized[int((dim[0] - crop[0]) / 2) : int((dim[0] + crop[0]) / 2),
+                         int((dim[1] - crop[1]) / 2) : int((dim[1] + crop[1]) / 2)]
 
 
 # In[25]:
