@@ -3,6 +3,8 @@ id_vcs.pub
 
 Data/
 
+*.gz
+
 ##### Standard python stuff
 
 # Byte-compiled / optimized / DLL files
