@@ -26,13 +26,18 @@ for i in selectedBatches:
 # In[37]:
 
 def get_g_Data_for_Autoencoder(data_object):
-    X_list=[(data_object[index].g_image_resized_reshaped)/data_object[index].g_image_resized_reshaped.max() for index in range(len(data_object))]
-    return np.asarray(X_list),np.asarray(X_list)
+    X_list = []
+    Y_list = []
+    for index in range(len(data_object)):
+      if data_object[index].i_image != None: 
+	      X_list.append((data_object[index].g_image_resized_reshaped)/data_object[index].g_image_resized_reshaped.max())
+	      Y_list.append((data_object[index].i_image_resized_reshaped)/data_object[index].i_image_resized_reshaped.max())
+    return np.asarray(X_list),np.asarray(Y_list)
 
 
 # In[38]:
 
-X,y=get_g_Data_for_Autoencoder(batch_data_object)
+X,Y=get_g_Data_for_Autoencoder(batch_data_object)
 
 
 # In[53]:
@@ -49,19 +54,21 @@ autoencoder.compile(optimizer='adadelta', loss='binary_crossentropy')
 # In[54]:
 
 X = X.astype('float32')
-y = y.astype('float32') 
+Y = Y.astype('float32') 
 
 
-X_train=X[0:int(len(X)*2/3)]
-X_test=X[int(len(X)*2/3):]
+X_train = X[0:int(len(X)*2/3)]
+X_test  = X[int(len(X)*2/3):]
+Y_train = Y[0:int(len(X)*2/3)]
+Y_test  = Y[int(len(X)*2/3):]
 
 # In[56]:
 
-autoencoder.fit(X_train, X_train,
+autoencoder.fit(X_train, Y_train,
                 epochs=30,
                 batch_size=10,
                 shuffle=True,
-                validation_data=(X_test, X_test))
+                validation_data=(X_test, Y_test))
 
 
 # In[57]:
@@ -75,15 +82,15 @@ encoded_imgs_train = encoder.predict(X_train)
 ### Save results
 
 #with open(os.path.join(output_path,"autoencoder_results_v3_up_to_" + str(maxBatchId) ), 'wb') as handle:
-with open(os.path.join(output_path,"autoencoder_results_test_"+version+"_" + "_".join(selectedBatches) ), 'wb') as handle:
+with open(os.path.join(output_path,"g_to_i_transformer_results_test_"+version+"_" + "_".join(selectedBatches) ), 'wb') as handle:
   pickle.dump(decoded_imgs_test, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-with open(os.path.join(output_path,"autoencoder_results_train_"+version+"_" + "_".join(selectedBatches) ), 'wb') as handle:
+with open(os.path.join(output_path,"g_to_i_transformer_results_train_"+version+"_" + "_".join(selectedBatches) ), 'wb') as handle:
   pickle.dump(decoded_imgs_train, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-with open(os.path.join(output_path,"encoder_results_test_"+version+"_" + "_".join(selectedBatches) ), 'wb') as handle:
+with open(os.path.join(output_path,"g_to_i_encoder_results_test_"+version+"_" + "_".join(selectedBatches) ), 'wb') as handle:
   pickle.dump(encoded_imgs_test, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-with open(os.path.join(output_path,"encoder_results_train_"+version+"_" + "_".join(selectedBatches) ), 'wb') as handle:
+with open(os.path.join(output_path,"g_to_i_encoder_results_train_"+version+"_" + "_".join(selectedBatches) ), 'wb') as handle:
   pickle.dump(encoded_imgs_train, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
