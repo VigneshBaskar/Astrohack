@@ -7,6 +7,7 @@ import warnings
 warnings.filterwarnings('ignore')
 import cv2
 import pickle
+import keras
 
 
 astrohack_path=os.path.dirname(os.path.realpath(__file__))
