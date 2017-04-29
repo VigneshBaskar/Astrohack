@@ -3,7 +3,7 @@
 
 # In[22]:
 
-get_ipython().magic('matplotlib inline')
+#get_ipython().magic('matplotlib inline')
 
 import os
 import sys

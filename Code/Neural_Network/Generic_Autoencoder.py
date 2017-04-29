@@ -3,7 +3,7 @@
 
 # In[38]:
 
-get_ipython().magic('matplotlib inline')
+#get_ipython().magic('matplotlib inline')
 
 import os
 import sys
@@ -19,7 +19,7 @@ for i in range(3):
 
 from param_global import *
 sys.path.append(pre_processing_path)
-from Read_Preprocess_data import data,plot_images
+from Read_Preprocess_data import data # ,plot_images
 import random
 
 
@@ -67,7 +67,7 @@ x = Conv2D(16, (3, 3), activation='relu', padding='same')(x)
 x = UpSampling2D((2, 2))(x)
 decoded = Conv2D(1, (3, 3), activation='relu', padding='same')(x)
 
-autoencoder = Model(input_imgG, decoded)
+autoencoder = Model(input_img, decoded)
 autoencoder.compile(optimizer='adadelta', loss='mean_squared_error')
 
 
@@ -79,13 +79,13 @@ y = y.astype('float32')
 
 # In[62]:
 
-# X_train=X[0:int(len(X)*2/3)]
-# X_test=X[int(len(X)*2/3):]
+X_train=X[0:int(len(X)*2/3)]
+X_test=X[int(len(X)*2/3):]
 
 
 # In[76]:
 
-X_train=X
+#X_train=X
 
 
 # In[77]:
@@ -94,7 +94,7 @@ autoencoder.fit(X_train, X_train,
                 epochs=30,
                 batch_size=10,
                 shuffle=True,
-                validation_data=(X_train, X_train))
+                validation_data=(X_test, X_test))
 
 
 # In[78]:
@@ -102,15 +102,22 @@ autoencoder.fit(X_train, X_train,
 decoded_imgs = autoencoder.predict(X_train)
 
 
+### Save results
+
+with open(os.path.join(output_path,"autoencoder_on_sample"), 'wb') as handle:
+  pickle.dump(decoded_imgs, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+#with open(os.path.join(output_path,"autoencoder_on_sample"), 'rb') as handle:
+#  b = pickle.load(handle)
 
 # In[87]:
 
-plot_images([decoded_imgs[20].reshape(decoded_imgs[1].shape[0],decoded_imgs[1].shape[1])])
+#plot_images([decoded_imgs[20].reshape(decoded_imgs[1].shape[0],decoded_imgs[1].shape[1])])
 
 
 # In[80]:
 
-sample_data_object[9].plot_image()
+#sample_data_object[9].plot_image()
 
 
 # In[ ]:
