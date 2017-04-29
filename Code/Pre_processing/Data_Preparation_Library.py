@@ -27,10 +27,14 @@ from param_global import *
 
 # In[24]:
 
-def image_resize(image,dim = (128, 128)):
-    #Args: image in the form of np.ndarray and the dimension to which it has to be resized
+def image_resize(image, dim=(128,128), crop=(128,128)):
+    '''Args: 
+       image: image in the form of np.ndarray
+       dim: dimension to which it has to be resized
+       crop: dimension of the image after center-cropping'''
     image_resized=cv2.resize(image, dim, interpolation = cv2.INTER_CUBIC)
-    return image_resized
+    return image_resized[int(dim[0] - crop[0] / 2) : int(dim[0] + crop[0] / 2),
+                         int(dim[1] - crop[1] / 2) : int(dim[1] + crop[1] / 2)]
 
 
 # In[25]:
@@ -74,7 +78,7 @@ class data(object):
             return None
 #    
 #    
-    def __init__(self,SDSS_ID,logMstar,err_logMstar,Distance,image_data_dir):
+    def __init__(self,SDSS_ID,logMstar,err_logMstar,Distance,image_data_dir,crop=(128,128)):
         self.SDSS_ID=SDSS_ID
         self.logMstar=logMstar
         self.err_logMstar=err_logMstar
@@ -84,12 +88,12 @@ class data(object):
         self.g_image=self.generate_g_Image() 
 #        
         if self.i_image!=None:
-            self.i_image_resized=image_resize(self.i_image)
+            self.i_image_resized=image_resize(self.i_image, crop=crop)
         else:
             self.i_image_resized=None
 #            
         if self.g_image!=None:
-            self.g_image_resized=image_resize(self.g_image)
+            self.g_image_resized=image_resize(self.g_image, crop=crop)
         else:
             self.g_image_resized=None
 #            
@@ -154,6 +158,6 @@ def get_Data(target_data_df,image_data_path):
         err_logMstar=target_data_df.iloc[index]["err_logMstar"]
         Distance=target_data_df.iloc[index]["Distance"]
 #
-        data_objects.append(data(SDSS_ID,logMstar,err_logMstar,Distance,image_data_path))
+        data_objects.append(data(SDSS_ID,logMstar,err_logMstar,Distance,image_data_path, crop=(32,32)))
     return data_objects
 
