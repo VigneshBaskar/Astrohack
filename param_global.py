@@ -8,6 +8,7 @@ warnings.filterwarnings('ignore')
 import cv2
 import pickle
 import keras
+import random
 
 
 astrohack_path=os.path.dirname(os.path.realpath(__file__))
@@ -23,3 +24,4 @@ pre_processing_path=os.path.join(code_path,"Pre_processing")
 predictions_path=os.path.join(code_path,"Predicitons")
 
 output_path="/data/leuven/319/vsc31950/output_data"
+temp_path="/scratch/leuven/319/vsc31950/output_files"
