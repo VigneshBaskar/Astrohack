@@ -1,0 +1,20 @@
+name: keras
+channels:
+- jjh_cio_testing
+- defaults
+dependencies:
+- cudatoolkit=7.5=0
+- matplotlib
+- pandas
+- python=3.6
+- scipy
+- six
+- cudnn=5.1=0
+- keras-gpu
+- jupyter
+- opencv
+- glib
+- pip:
+  - tensorflow==1.0.1
+#prefix: /data/leuven/301/vsc30140/TensorFlow/miniconda3/envs/tensorflow
+
