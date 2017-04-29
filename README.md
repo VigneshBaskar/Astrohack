@@ -19,24 +19,32 @@ Set up a `conda` environment containing jupyter (for example using one of the en
 
 Request your compute note if needed.
 ```shell
-qsub .........
+module load tmux
+tmux
+
+# For CPU:
+qsub -I -A lp_astrohack -lnodes=1:ppn=20 -lwalltime=4:00:00
+# For GPU:
+qsub -I -A lp_astrohack -lpartition=gpu -lnodes=1:ppn=20:K40c -lwalltime=4:00:00
+
+<CTRL+SPACE> d
 ```
 
 Find its name with
 ```shell
 qstat -n
 ```
-Assuming the name is `r10n5` we can set up the second tunnel with
+Assuming the name is `r1i0n1` we can set up the second tunnel with
 
 ```shell
-ssh r10n5 -L 8888:localhost:8888
-```
-
-Finally,
-```shell
+module load tmux
+tmux
+ssh r1i0n1 -L 7333:localhost:7333
+# Now you're on the compute node!
 cd $VSC_DATA
-source activate tensorflow_non_gpu
-jupyter notebook --port=8888
+source activate keras
+jupyter notebook --port=7333
+<CTRL+SPACE> d
 ```
 and copy-paste the link in the first lines of the output to go to your notebook server.
 
