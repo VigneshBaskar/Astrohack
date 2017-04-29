@@ -14,9 +14,9 @@ from Data_Preparation_Library import *
 
 sys.path.append(pre_processing_path)
 
-selectedBatches=["6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"]
-#maxBatchId = 
-#selectedBatches=[str(i) for i in range(maxBatchId)]
+#selectedBatches=["6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"]
+maxBatchId = 76
+selectedBatches=[str(i) for i in range(maxBatchId)]
 batch_data_object = []
 for i in selectedBatches:
 	with open(os.path.join(temp_path,'full_data_object_' + i + '.p'), 'rb') as handle:
@@ -51,21 +51,21 @@ x = Conv2D(32, (ws,ws), activation='relu', padding='same')(input_img)
 print("1st Convolutional layer shape",x.shape)
 x = MaxPooling2D((mpw,mpw), padding='same')(x)
 print("1st Maxpooling layer shape",x.shape)
-x = Conv2D(16, (ws,ws), activation='relu', padding='same')(x)
-print("2nd Convolutional layer shape",x.shape)
-x = MaxPooling2D((mpw,mpw), padding='same')(x)
-print("2nd Maxpooling layer shape",x.shape)
 #x = Conv2D(16, (ws,ws), activation='relu', padding='same')(x)
-#print("3rd Convolutional layer shape",x.shape)
-#encoded = MaxPooling2D((mpw,mpw), padding='same')(x)
-#print("Encoding layer shape",x.shape)
+#print("2nd Convolutional layer shape",x.shape)
+#x = MaxPooling2D((mpw,mpw), padding='same')(x)
+#print("2nd Maxpooling layer shape",x.shape)
+x = Conv2D(16, (ws,ws), activation='relu', padding='same')(x)
+print("3rd Convolutional layer shape",x.shape)
+encoded = MaxPooling2D((mpw,mpw), padding='same')(x)
+print("Encoding layer shape",x.shape)
 
 # at this point the representation is (4, 4, 8) i.e. 128-dimensional
 
-#x = Conv2D(16, (ws,ws), activation='relu', padding='same')(encoded)
-#x = UpSampling2D((mpw,mpw))(x)
-x = Conv2D(16, (ws,ws), activation='relu', padding='same')(x)
+x = Conv2D(16, (ws,ws), activation='relu', padding='same')(encoded)
 x = UpSampling2D((mpw,mpw))(x)
+#x = Conv2D(16, (ws,ws), activation='relu', padding='same')(x)
+#x = UpSampling2D((mpw,mpw))(x)
 x = Conv2D(32, (ws,ws), activation='relu', padding='same')(x)
 x = UpSampling2D((mpw,mpw))(x)
 
