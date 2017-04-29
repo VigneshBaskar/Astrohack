@@ -5,28 +5,21 @@
 
 #get_ipython().magic('matplotlib inline')
 
-import os
 import sys
+import os
 
-try:
-    current_path=os.path.dirname(os.path.realpath(__file__))
-except NameError:
-    current_path=os.getcwd()
+sys.path.append("../Pre_processing")
 
-for i in range(3):
-    sys.path.append(current_path)
-    current_path=os.path.dirname(current_path)
+from Data_Preparation_Library import *
 
-from param_global import *
 sys.path.append(pre_processing_path)
-from Read_Preprocess_data import data # ,plot_images
-import random
 
+selectedBatches=["6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"]
 
-# In[2]:
-
-with open(os.path.join(sample_data_path,'sample_data_object.p'), 'rb') as handle:
-    sample_data_object=pickle.load(handle)
+batch_data_object = []
+for i in selectedBatches:
+	with open(os.path.join(temp_path,'full_data_object_' + i + '.p'), 'rb') as handle:
+	    batch_data_object+=pickle.load(handle)
 
 
 # In[37]:
@@ -38,7 +31,7 @@ def get_g_Data_for_Autoencoder(data_object):
 
 # In[38]:
 
-X,y=get_g_Data_for_Autoencoder(sample_data_object)
+X,y=get_g_Data_for_Autoencoder(batch_data_object)
 
 
 # In[53]:
@@ -73,6 +66,7 @@ x = Conv2D(16, (3, 3), activation='relu', padding='same')(x)
 x = UpSampling2D((2, 2))(x)
 decoded = Conv2D(1, (3, 3), activation='sigmoid', padding='same')(x)
 
+autoencoder = Model(input_img, decoded)
 autoencoder.compile(optimizer='adadelta', loss='binary_crossentropy')
 
 
@@ -101,5 +95,6 @@ decoded_imgs = autoencoder.predict(X_train)
 
 ### Save results
 
-with open(os.path.join(output_path,"autoencoder_on_sample"), 'wb') as handle:
+with open(os.path.join(output_path,"autoencoder_results_"+ "_".join(selectedBatches)), 'wb') as handle:
   pickle.dump(decoded_imgs, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
