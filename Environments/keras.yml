@@ -8,6 +8,8 @@ dependencies:
 - pandas
 - python=3.6
 - scipy
+- scikit-learn
+- scikit-image
 - six
 - cudnn=5.1=0
 - keras-gpu
