@@ -14,8 +14,9 @@ from Data_Preparation_Library import *
 
 sys.path.append(pre_processing_path)
 
-selectedBatches=["6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"]
-
+#selectedBatches=["6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"]
+maxBatchId = 1
+selectedBatches=[str(i) for i in range(maxBatchId)]
 batch_data_object = []
 for i in selectedBatches:
 	with open(os.path.join(temp_path,'full_data_object_' + i + '.p'), 'rb') as handle:
@@ -70,6 +71,7 @@ x = UpSampling2D((mpw,mpw))(x)
 
 decoded = Conv2D(1, (ws,ws), activation='sigmoid', padding='same')(x)
 
+encoder = Model(input_img, encoded)
 autoencoder = Model(input_img, decoded)
 autoencoder.compile(optimizer='adadelta', loss='binary_crossentropy')
 
@@ -94,11 +96,24 @@ autoencoder.fit(X_train, X_train,
 
 # In[57]:
 
-decoded_imgs = autoencoder.predict(X_train)
+decoded_imgs_test = autoencoder.predict(X_test)
+encoded_imgs_test = encoder.predict(X_test)
+decoded_imgs_train = autoencoder.predict(X_train)
+encoded_imgs_train = encoder.predict(X_train)
 
 
 ### Save results
 
-with open(os.path.join(output_path,"autoencoder_results_v2_"+ "_".join(selectedBatches)), 'wb') as handle:
-  pickle.dump(decoded_imgs, handle, protocol=pickle.HIGHEST_PROTOCOL)
+#with open(os.path.join(output_path,"autoencoder_results_v3_up_to_" + str(maxBatchId) ), 'wb') as handle:
+with open(os.path.join(output_path,"autoencoder_results_test_v2_" + "_".join(selectedBatches) ), 'wb') as handle:
+  pickle.dump(decoded_imgs_test, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+with open(os.path.join(output_path,"autoencoder_results_train_v2_" + "_".join(selectedBatches) ), 'wb') as handle:
+  pickle.dump(decoded_imgs_train, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+with open(os.path.join(output_path,"encoder_results_test_v2_" + "_".join(selectedBatches) ), 'wb') as handle:
+  pickle.dump(encoded_imgs_test, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+with open(os.path.join(output_path,"encoder_results_train_v2_" + "_".join(selectedBatches) ), 'wb') as handle:
+  pickle.dump(encoded_imgs_train, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
