@@ -84,16 +84,16 @@ class data(object):
         self.err_logMstar=err_logMstar
         self.Distance=Distance
         self.image_data_dir=image_data_dir
-        self.i_image=self.generate_i_Image()
-        self.g_image=self.generate_g_Image() 
+        i_image=self.generate_i_Image()
+        g_image=self.generate_g_Image() 
 #        
-        if self.i_image!=None:
-            self.i_image_resized=image_resize(self.i_image, crop=crop)
+        if i_image!=None:
+            self.i_image_resized=image_resize(i_image, crop=crop)
         else:
             self.i_image_resized=None
 #            
-        if self.g_image!=None:
-            self.g_image_resized=image_resize(self.g_image, crop=crop)
+        if g_image!=None:
+            self.g_image_resized=image_resize(g_image, crop=crop)
         else:
             self.g_image_resized=None
 #            
@@ -108,13 +108,13 @@ class data(object):
             self.g_image_resized_reshaped=None
 #            
     def plot_image(self):
-        if self.i_image!=None:
+        if self.i_image_resized!=None:
             plt.subplot(121)
             img=plt.imshow(self.i_image)
             img.set_cmap('hot')
             plt.title("I band Image")
             plt.axis('off')
-        if self.g_image!=None:
+        if self.g_image_resized!=None:
             plt.subplot(122)
             img=plt.imshow(self.g_image)
             plt.title("G band Image")
@@ -147,7 +147,7 @@ def read_target_data_csv(target_data_csv_path):
 
 # In[29]:
 
-def get_Data(target_data_df,image_data_path):
+def get_Data(target_data_df,image_data_path,size=128):
     # Arg: a Dataframe of the target data and the path of the images
     # Returns a list of data objects
 #    
@@ -158,6 +158,6 @@ def get_Data(target_data_df,image_data_path):
         err_logMstar=target_data_df.iloc[index]["err_logMstar"]
         Distance=target_data_df.iloc[index]["Distance"]
 #
-        data_objects.append(data(SDSS_ID,logMstar,err_logMstar,Distance,image_data_path, crop=(32,32)))
+        data_objects.append(data(SDSS_ID,logMstar,err_logMstar,Distance,image_data_path, crop=(size,size)))
     return data_objects
 

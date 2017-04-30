@@ -14,12 +14,14 @@ from Data_Preparation_Library import *
 
 sys.path.append(pre_processing_path)
 
-selectedBatches=["6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"]
-#maxBatchId = 76
-#selectedBatches=[str(i) for i in range(maxBatchId)]
+#selectedBatches=["6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"]
+maxBatchId = 76
+selectedBatches=[str(i) for i in range(maxBatchId)]
+#extra_folder = "128_128"
+extra_folder = "32_32"
 batch_data_object = []
 for i in selectedBatches:
-	with open(os.path.join(temp_path,'full_data_object_' + i + '.p'), 'rb') as handle:
+	with open(os.path.join(temp_path,extra_folder,'full_data_object_' + i + '.p'), 'rb') as handle:
 	    batch_data_object+=pickle.load(handle)
 
 
@@ -43,8 +45,8 @@ X,Y=get_g_Data_for_Autoencoder(batch_data_object)
 # In[53]:
 
 # insert model here  TODO
-version = "v3"
-from topology_v3 import *
+version = "v1"
+from topology_v1 import *
 
 encoder = Model(input_img, encoded)
 autoencoder = Model(input_img, decoded)
@@ -81,16 +83,22 @@ encoded_imgs_train = encoder.predict(X_train)
 
 ### Save results
 
+#postfix = "_".join(selectedBatches)
+postfix = "_all"
+
+autoencoder.save(os.path.join(output_path,"g_to_i_model_"+version+"_"+postfix))
+encoder.save(os.path.join(output_path,"g_to_i_encoder_model_"+version+"_"+postfix))
+
 #with open(os.path.join(output_path,"autoencoder_results_v3_up_to_" + str(maxBatchId) ), 'wb') as handle:
-with open(os.path.join(output_path,"g_to_i_transformer_results_test_"+version+"_" + "_".join(selectedBatches) ), 'wb') as handle:
+with open(os.path.join(output_path,"g_to_i_transformer_results_test_"+version+"_" + postfix ), 'wb') as handle:
   pickle.dump(decoded_imgs_test, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-with open(os.path.join(output_path,"g_to_i_transformer_results_train_"+version+"_" + "_".join(selectedBatches) ), 'wb') as handle:
+with open(os.path.join(output_path,"g_to_i_transformer_results_train_"+version+"_" + postfix ), 'wb') as handle:
   pickle.dump(decoded_imgs_train, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-with open(os.path.join(output_path,"g_to_i_encoder_results_test_"+version+"_" + "_".join(selectedBatches) ), 'wb') as handle:
+with open(os.path.join(output_path,"g_to_i_encoder_results_test_"+version+"_" + postfix ), 'wb') as handle:
   pickle.dump(encoded_imgs_test, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-with open(os.path.join(output_path,"g_to_i_encoder_results_train_"+version+"_" + "_".join(selectedBatches) ), 'wb') as handle:
+with open(os.path.join(output_path,"g_to_i_encoder_results_train_"+version+"_" + postfix ), 'wb') as handle:
   pickle.dump(encoded_imgs_train, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
